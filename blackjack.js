@@ -4,8 +4,15 @@ var deal = function () {
 };
 var card1 = deal();
 var card2 = deal();
-var getValue = function (card) {
-    return (card % 13);
+var getValue = function(card) {
+    // if its a face card, number should be set to 10
+    if((card % 13 > 10 || card === 0)) {
+        return 10;
+    }
+    // Otherwise number should be set to card modulo 13
+    else {
+        return card % 13;
+    }
 };
 var score = function () {
     return getValue(card1+card2);
