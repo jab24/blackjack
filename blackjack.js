@@ -4,6 +4,9 @@ var deal = function () {
 };
 var card1 = deal();
 var card2 = deal();
+var getValue = function (card) {
+    return card;
+};
 var score = function () {
     return card1+card2;
 };
