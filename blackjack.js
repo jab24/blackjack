@@ -9,6 +9,8 @@ var getValue = function(card) {
     if((card % 13 > 10 || card === 0)) {
         return 10;
     }
+    // What if it's an Ace?
+    else if (card % 13 === 1) return 11;
     // Otherwise number should be set to card modulo 13
     else {
         return card % 13;
