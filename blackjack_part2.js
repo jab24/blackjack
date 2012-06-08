@@ -27,8 +27,15 @@ var deal = function(){
 function Hand(){
    	this.card1 = deal(); 
     	this.card2 = deal(); 
+	this.score = function(){
+      		return card1.getValue()+card2.getValue();  
+    	};
 }
-var hand1 = new Hand(); 
-console.log(hand1.card1.getValue());
-console.log(hand1.card2.getValue())
+var myHand = new Hand(); 
+var yourHand = new Hand();
+console.log("I scored a "+myHand.score()+" and you scored a "+ yourHand.score());
+if(yourHand.score() > myHand.score()) console.log("you win!"); 
+else if(yourHand.score() < myHand.score()) console.log("I win!"); 
+else console.log("We tied!");
+
 
