@@ -19,5 +19,4 @@ var getValue = function(card) {
 var score = function () {
     return getValue(card1+card2);
 };
-console.log("You have cards " + card1 + " and " + card2 +
-        " for a score of " + score());
+console.log("You have cards " + card1 + " and " + card2 +" for a score of " + score());
