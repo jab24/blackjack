@@ -1,10 +1,10 @@
 function Card(suit,number){
-	this.suit = suit;
-	this.number = number;
-	this.getSuit = function(){
+	var suit = suit;
+	var number = number;
+	var getSuit = function(){
 		return this.getSuit;
 	}
 	this.getNumber = function(){
-		return this.getNumber;
+		return getNumber;
 	}
 }
