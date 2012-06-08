@@ -24,5 +24,11 @@ var deal = function(){
         number = Math.floor(Math.random()*13+1);
         return new Card(suit,number);
 }
-var card1 = deal();
-var card2 = deal();
+function Hand(){
+   	this.card1 = deal(); 
+    	this.card2 = deal(); 
+}
+var hand1 = new Hand(); 
+console.log(hand1.card1.getValue());
+console.log(hand1.card2.getValue())
+
