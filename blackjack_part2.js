@@ -7,6 +7,17 @@ function Card(s,n){
 	this.getNumber = function(){
 		return getNumber;
 	}
+	this.getValue = function(){
+        	if (number >= 11 && number <= 13) {
+            		return 10;
+        	}
+        	else if (number === 1) {
+           		 return 11;
+        	}
+        	else {
+        	    return number;
+        	}
+    	};
 }
 var deal = function(){
 	suit = Math.floor(Math.random()*4+1);  
