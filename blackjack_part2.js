@@ -33,16 +33,23 @@ function Hand(){
     	var card2 = deal(); 
 	var myArray = [card1,card2];
 	this.score = function(){
-      		return myArray;  
-    	};
-	this.score = function(){
-        	var sum = 0;
-     		for(var i= 0;i <= myArray.length;i++){
-     			sum += myArray[i].getValue();
-
-      		}		  
-      	return sum;
-	};
+ 		var score = 0;
+ 		var ace = 0;
+ 		for (var i=0; i< hand.length;i++){
+     			if (hand[i].getValue === 11){
+         		score += hand[i].getValue(); 
+         		ace++;
+     			}
+     			else{
+         			score += hand[i].getValue();
+     			}
+ 		}
+ 		while (score > 21 && ace >0){
+     			score -=10;
+     			ace--;
+ 		}
+   	return score;
+}; 
 	this.printHand = function(){
         	var string = "";
         	for(var i = 0; i < myArray.length; i++){
