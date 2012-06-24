@@ -79,3 +79,45 @@ function playAsUser(){
     }
     return player.getHand;
 }
+var declareWinner = function(userHand, dealerHand){
+var userscore = userHand.score();
+var dealerscore = dealerHand.score();
+if (userscore > 21){
+if (dealerscore > 21){
+console.log("You tied!");
+return "You tied!";
+}
+else {
+console.log("You lose!");
+return "You lose!"; 
+}
+}
+else if (dealerscore > 21){
+console.log("You win!");
+return "You win!";
+}
+else if (userscore > dealerscore){
+console.log("You win!");
+return "You win!";
+}
+else if (userscore === dealerscore){
+console.log("You tied!");
+return "You tied!"; 
+}
+else {
+console.log("You lose!");
+return "You lose!"; 
+
+}
+}
+var playGame = function() {
+    var userHand = playAsUser();
+    var dealerHand = playAsDealer();
+    var result = declareWinner(userHand, dealerHand);
+    console.log("User's hand: " + userHand.printHand());
+    console.log("\tfor a score of " + userHand.score());
+    console.log("Dealer's hand: " + dealerHand.printHand());
+    console.log("\tfor a score of " + dealerHand.score());
+    console.log("\n" + result + "\n");
+};
+playGame();
