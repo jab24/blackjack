@@ -2,10 +2,10 @@ function Card(s,n){
 	var suit = s;
 	var number = n;
 	this.getSuit = function(){
-		return getSuit;
+		return suit;
 	}
 	this.getNumber = function(){
-		return getNumber;
+		return number;
 	}
 	this.getValue = function(){
         	if (number >= 11 && number <= 13) {
@@ -25,11 +25,19 @@ var deal = function(){
         return new Card(suit,number);
 }
 function Hand(){
-   	this.card1 = deal(); 
-    	this.card2 = deal(); 
+   	var card1 = deal(); 
+    	var card2 = deal(); 
+	var myArray = [card1,card2];
 	this.score = function(){
-      		return card1.getValue()+card2.getValue();  
+      		return myArray;  
     	};
+	this.score = function(){
+        	var sum = 0;
+     		for(var i= 0;i <= myArray.length;i++){
+     			sum += myArray[i].getValue();
+
+      		}		  
+      	return sum;
 }
 var myHand = new Hand(); 
 var yourHand = new Hand();
