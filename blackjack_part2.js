@@ -59,11 +59,23 @@ function Hand(){
     	};
    	console.log(myArray.printHand());
 }
-var myHand = new Hand(); 
-var yourHand = new Hand();
-console.log("I scored a "+myHand.score()+" and you scored a "+ yourHand.score());
-if(yourHand.score() > myHand.score()) console.log("you win!"); 
-else if(yourHand.score() < myHand.score()) console.log("I win!"); 
-else console.log("We tied!");
-
-
+function playAsDealer(){
+    var dealerHand = new Hand();
+    while (dealerHand.score() < 17){
+        dealerHand.hitme();
+    }
+    return dealerHand;
+}
+function playAsUser(){
+    player = new Hand();
+    hit = confirm(player.printHand(false)+" for "+player.score()+" points, do you want to hit?");
+    if (hit) {
+        player.hitMe(false);
+    } while (hit === true) {
+        hit = confirm(player.printHit(false)+" for "+player.score()+" points, do you want to hit again?");
+        if (hit) {
+            player.hitMe(false);
+        }
+    }
+    return player.getHand;
+}
