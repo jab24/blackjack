@@ -18,6 +18,10 @@ function Card(s,n){
         	    return number;
         	}
     	};
+	this.hitMe = function(){
+        	var newCard = deal();
+        	myArray.push(newCard);
+    	};
 }
 var deal = function(){
 	suit = Math.floor(Math.random()*4+1);  
