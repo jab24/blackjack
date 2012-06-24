@@ -38,6 +38,15 @@ function Hand(){
 
       		}		  
       	return sum;
+	};
+	this.printHand = function(){
+        	var string = "";
+        	for(var i = 0; i < myArray.length; i++){
+            		string = myArray[i].getNumber() + " of suit "+ myArray[i].getSuit()+", ";
+        	}
+        return string;
+    	};
+   	console.log(myArray.printHand());
 }
 var myHand = new Hand(); 
 var yourHand = new Hand();
